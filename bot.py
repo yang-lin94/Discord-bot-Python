@@ -14,7 +14,7 @@ async def on_ready():
 
 
 @bot.command()
-async def ping(ctx):
-    await ctx.send(f'{round(bot.latency*1000)}(ms)')
+async def p(ctx):
+    await ctx.send('音樂模式開發中')
 
 bot.run(jdata['TOKEN'])
