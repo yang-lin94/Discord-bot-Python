@@ -1,5 +1,9 @@
 import discord
 from discord.ext import commands
+import json
+
+with open('setting.json', mode='r', encoding='utf8') as jfile:
+    jdata = json.load(jfile)
 
 bot = commands.Bot(command_prefix=';;')
 
@@ -13,4 +17,4 @@ async def on_ready():
 async def ping(ctx):
     await ctx.send(f'{round(bot.latency*1000)}(ms)')
 
-bot.run('NzEwNTE5NjEzNDYwMzE2MjQw.Xr4eXg.nHTsHEs1mKGPTFGlZDUtHiHilAw')
+bot.run(jdata['TOKEN'])
