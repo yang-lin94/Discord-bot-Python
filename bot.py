@@ -15,11 +15,6 @@ async def on_ready():
 
 
 @bot.command()
-async def p(ctx):
-    await ctx.send('音樂模式開發中')
-
-
-@bot.command()
 async def load(ctx, extension):
     bot.load_extension(f'cmds.{extension}')
     await ctx.send(f'Loaded {extension} down.')
