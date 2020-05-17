@@ -10,9 +10,13 @@ class Main(Cog_Extension):
         await ctx.send(f'{round(self.bot.latency*1000)}(ms)')
 
     @commands.command()
-    async def sy(self, ctx, msg):
+    async def sy(self, ctx, *, msg):
         await ctx.message.delete()
         await ctx.send(msg)
+
+    @commands.command()
+    async def clean(self, ctx, num: int):
+        await ctx.channel.purge(limit=num+1, bulk=False)
 
 
 def setup(bot):
